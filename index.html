@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Tết 2026 - Gói Bánh Chưng</title>
+    <style>
+        :root {
+            --primary: #d32f2f;
+            --gold: #ffca28;
+            --dark: #8b0000;
+        }
+
+        body {
+            margin: 0; padding: 0;
+            background: var(--dark);
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            display: flex; justify-content: center; align-items: flex-start;
+            min-height: 100vh; overflow-x: hidden;
+            padding: 15px; box-sizing: border-box;
+        }
+
+        /* Pháo hoa nổ sinh động */
+        .pyro > .before, .pyro > .after {
+            position: absolute; width: 6px; height: 6px; border-radius: 50%;
+            animation: 1.2s bang ease-out infinite, 1.2s gravity ease-in infinite, 6s position linear infinite;
+        }
+        @keyframes bang { to { box-shadow: -80px -120px #ffeb3b, 30px -50px #4caf50, 60px -160px #2196f3, 90px -60px #e91e63, -60px 90px #ff9800, 110px 30px #ffffff; } }
+        @keyframes gravity { to { transform: translateY(250px); opacity: 0; } }
+        @keyframes position { 0% { top: 15%; left: 20%; } 25% { top: 40%; left: 75%; } 50% { top: 75%; left: 30%; } 75% { top: 55%; left: 60%; } 100% { top: 15%; left: 20%; } }
+
+        /* Icon rơi (Hoa mai, Bánh chưng, Lì xì) */
+        .floating {
+            position: fixed; font-size: 30px; opacity: 0.4; z-index: 1;
+            animation: fall linear infinite; pointer-events: none;
+        }
+        @keyframes fall {
+            from { transform: translateY(-10vh) rotate(0deg); }
+            to { transform: translateY(110vh) rotate(360deg); }
+        }
+
+        /* Khung nội dung tối ưu Mobile */
+        .container {
+            background: rgba(255, 255, 255, 0.98);
+            width: 100%; max-width: 450px;
+            padding: 25px; border-radius: 25px;
+            border: 4px solid var(--gold);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.5);
+            position: relative; z-index: 10;
+            margin-top: 10px; margin-bottom: 20px;
+        }
+
+        h1 {
+            color: var(--primary); text-align: center;
+            font-size: 22px; text-transform: uppercase;
+            line-height: 1.4; margin: 0 0 15px 0;
+            border-bottom: 2px solid var(--gold); padding-bottom: 10px;
+        }
+
+        .intro {
+            font-size: 14px; text-align: center; font-style: italic;
+            color: #555; margin-bottom: 20px; line-height: 1.5;
+        }
+
+        .info-card {
+            background: #fff9c4; padding: 15px; border-radius: 15px;
+            margin-bottom: 20px; border-left: 6px solid var(--primary);
+        }
+
+        .info-card p { margin: 8px 0; font-size: 15px; }
+
+        .notes { font-size: 14px; color: #333; }
+        .notes b { color: var(--primary); }
+        .notes ul { padding-left: 20px; margin: 10px 0; }
+        .notes li { margin-bottom: 8px; }
+
+        /* Form đăng ký Mobile-Friendly */
+        .order-form {
+            background: #fdf2f2; padding: 20px; border-radius: 20px;
+            border: 2px dashed var(--primary); margin-top: 20px;
+        }
+        .order-form h2 {
+            font-size: 18px; color: var(--primary); text-align: center; margin-top: 0;
+        }
+        .order-form input {
+            width: 100%; height: 50px; /* To hơn để dễ bấm trên Mobile */
+            margin: 10px 0; padding: 0 15px;
+            border: 1px solid #ddd; border-radius: 12px;
+            font-size: 16px; box-sizing: border-box;
+        }
+        .btn-submit {
+            width: 100%; height: 55px;
+            background: var(--primary); color: white;
+            border: none; border-radius: 12px;
+            font-size: 18px; font-weight: bold;
+            cursor: pointer; margin-top: 10px;
+            box-shadow: 0 5px 15px rgba(211, 47, 47, 0.4);
+            transition: transform 0.2s;
+        }
+        .btn-submit:active { transform: scale(0.95); } /* Hiệu ứng nhấn nút trên Mobile */
+        
+        #status-msg { text-align: center; font-weight: bold; margin-top: 10px; font-size: 14px; }
+    </style>
+</head>
+<body>
+
+    <div class="pyro"><div class="before"></div><div class="after"></div></div>
+
+    <div class="container">
+        <h1>🧧 CHƯƠNG TRÌNH<br>GÓI BÁNH CHƯNG chào xuân 2026.</h1>
+        
+        <p class="intro">Để có một cái <strong>Tết Ý nghĩa</strong> - Vui vẻ hơn thì nhóm quyết định tổ chức chương trình gói bánh chưng <strong>chào xuân 2026.</strong></p>
+
+        <div class="info-card">
+            <p>📅 <b>Thời gian:</b> 19:00 ngày 7/2 (Thứ 7)</p>
+            <p>📍 <b>Địa điểm:</b> Nhà thờ Aoyama * Nhà Thờ Cha Phúc đang ở hiện tại.</p>
+            <p>📝 <b>Hình thức:</b> Bỏ Vote tham gia.</p>
+        </div>
+
+        <div class="notes">
+            <b>* Lưu ý quan trọng:</b>
+            <ul>
+                <li>🔹<strong>Lần này nhóm dự sẽ không bán góp quỹ mà sẽ</strong><span style="color:red"><strong> BÁN NỘI BỘ</strong> cho các bạn tham gia gói bánh <strong>hoặc đã đăng ký trước.</strong> </li>
+                <li><strong>Size bánh tầm trung dự kiến:</strong> <span style="color:red">13.5x13.5x4.5</span></li>
+                <li><strong>Giá dự kiến:</strong> <span style="color:red">~1500¥ <strong>(Khả năng đắt hơn mua sẵn do giá gạo đang đắt).</strong> </span></li>
+                <li><strong>Sau đó có </strong> <b>ăn uống + trông nồi</b> (Lôtô, Ma sói...)</li>
+            </ul>
+        </div>
+
+        <div class="order-form">
+            <h2>🍱 ĐĂNG KÝ MUA BÁNH</h2>
+            <input type="text" id="name" placeholder="Tên của bạn..." required>
+            <input type="number" id="qty" placeholder="Số lượng bánh muốn mua..." required>
+            <input type="text" id="phone" placeholder="Số điện thoại / Facebook...">
+            <button class="btn-submit" onclick="sendToTelegram()">ĐĂNG KÝ NGAY 🏮</button>
+            <div id="status-msg"></div>
+        </div>
+    </div>
+
+    <script>
+        // Tạo hiệu ứng vật thể rơi sinh động
+        const symbols = ['🌸', '🧧', '🫔', '🍊', '🎆'];
+        for (let i = 0; i < 15; i++) {
+            let div = document.createElement('div');
+            div.className = 'floating';
+            div.innerHTML = symbols[Math.floor(Math.random() * symbols.length)];
+            div.style.left = Math.random() * 100 + 'vw';
+            div.style.animationDuration = (Math.random() * 5 + 5) + 's';
+            div.style.animationDelay = (Math.random() * 5) + 's';
+            document.body.appendChild(div);
+        }
+
+        // Hàm gửi tin nhắn Telegram
+        function sendToTelegram() {
+            // --- THÔNG TIN CỦA BẠN ---
+            const token = "8137893610:AAEBHQCGwd5enIsvc7D1bkgs1IjKbKmEwuY"; 
+            const chat_id = "7034479825";
+            // ------------------------
+
+            const name = document.getElementById('name').value;
+            const qty = document.getElementById('qty').value;
+            const phone = document.getElementById('phone').value;
+            const status = document.getElementById('status-msg');
+
+            if (!name || !qty) {
+                alert("Vui lòng điền tên và số lượng bánh!");
+                return;
+            }
+
+            status.innerText = "Đang gửi đăng ký...";
+            status.style.color = "blue";
+
+            const msg = `🔔 ĐƠN BÁNH CHƯNG 2026\n👤 Khách: ${name}\n📦 SL: ${qty} cái\n📞 LH: ${phone}`;
+            const url = `https://api.telegram.org/bot${token}/sendMessage?chat_id=${chat_id}&text=${encodeURIComponent(msg)}`;
+
+            fetch(url).then(res => {
+                if(res.ok) {
+                    status.innerText = "✅ Đã đăng ký thành công! 🧧";
+                    status.style.color = "green";
+                    document.getElementById('name').value = "";
+                    document.getElementById('qty').value = "";
+                    document.getElementById('phone').value = "";
+                } else {
+                    status.innerText = "❌ Lỗi! Kiểm tra Token/ID.";
+                    status.style.color = "red";
+                }
+            });
+        }
+    </script>
+</body>
+</html>
